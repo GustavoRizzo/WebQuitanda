@@ -11,8 +11,9 @@ $ npm install
 $ ng serve
 ```
 
-## Rodando Homologação
+## Rodando server
 ```bash
+$ node server.js
 $ http://localhost:4000/fruits //retorna json com as frutas
 ```
 
