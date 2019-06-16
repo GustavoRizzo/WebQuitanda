@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { select, Store } from '@ngrx/store';
+import { GetItems } from '../store/actions';
+import { Product } from '../product/product.component';
 
 @Component({
   selector: 'app-home',
@@ -7,11 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private store: Store<{ items: Product[]; cart: any[] }>) {
+    store.pipe(select('shop')).subscribe(data => (this.items = data.items));
+  }
 
-  cart = [];
+  items: Product[] = [];
+
+  //cart = [];
 
   ngOnInit() {
+    this.store.dispatch(new GetItems());
   }
 
 }
