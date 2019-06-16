@@ -25,6 +25,7 @@
           margin: 0;
           letter-spacing: 1px;
           color: rgb(52, 186, 219);
+          background-clip: text; /*adicionado por mim*/
           background: linear-gradient(
             90deg,
             rgba(52, 186, 219, 0.9878326330532213) 44%,
